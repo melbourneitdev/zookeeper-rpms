@@ -1,5 +1,5 @@
 %define _noarch_libdir /usr/lib 
-%define rel_ver 3.4.5
+%define rel_ver 3.4.6
 
 Summary: High-performance coordination service for distributed applications.
 Name: zookeeper
@@ -16,7 +16,7 @@ Source4: log4j.properties
 Source5: java.env
 BuildRoot: %{_tmppath}/%{name}-%{rel_ver}-%{release}-root
 BuildRequires: python-devel,gcc,make,libtool,autoconf,cxxtest,cppunit-devel,cppunit
-Requires: logrotate, java
+Requires: logrotate, jre
 Requires(post): chkconfig initscripts
 Requires(pre): chkconfig initscripts
 AutoReqProv: no
@@ -157,6 +157,9 @@ if [ "$1" -ge "1" ] ; then
 fi
 
 %changelog
+* Mon May 12 2014 Guy Gershoni <guy@conchus.com> - 3.4.6-1
+- Updated to 3.4.6
+- Changed dependency from "java" to "jre" so Oracle JRE install is detected.
 * Thu May 30 2013 Sam Kottler <shk@linux.com> - 3.4.5-1
 - Updated to 3.4.5
 * Tue Oct 2 2012 Sam Kottler <sam@kottlerdevelopment.com> - 3.3.2-1

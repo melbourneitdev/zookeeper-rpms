@@ -1,4 +1,9 @@
 # Overview
+
+Note
+=====
+This fork of https://github.com/skottler/zookeeper-rpms has only minor changes which include using version 3.4.6 of Zookeeper and requiring "jre" instead of "java", which stops Centos trying to download a heap of dependencies if you have Oracle JRE already installed.
+
 This repository contains everything needed to build RPM's for zookeeper, including libzookeeper and the devel packages. Different pieces are taken from places around the internet; the init script is quite close to Cassandra's. Individual packages will be built for zookeeper, libzookeeper, and zookeeper-devel.
 
 The spec has been tested only on EL6 with the EPEL repo enabled, but should also work on recent Fedoras, too.
